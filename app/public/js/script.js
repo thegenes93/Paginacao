@@ -1,15 +1,15 @@
 $(document).ready(function () {
     $.get("/listar", function (dados) {
      
-        let pagina =0
+        let pagina=0
         let tamanhoPagina = 5
         
       
     function paginar() {
      
             $('table > tbody > tr').remove();
-            var tbody = $('table > tbody');
-            for (var i = pagina * tamanhoPagina; i < dados.length && i < (pagina + 1) * tamanhoPagina; i++) {
+            let tbody = $('table > tbody');
+            for (let i = pagina * tamanhoPagina; i < dados.length && i < (pagina + 1) * tamanhoPagina; i++) {
                 tbody.append(
                     $('<tr>')
                         .append($('<td>').append(dados[i].id))
