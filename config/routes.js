@@ -10,7 +10,10 @@ module.exports = app => {
 
     app.route('/list')
         .get(controllers.list.get)
-        
+
+    app.route('/listar')
+        .get(controllers.list.gets)
+
     app.route('/list/id')
         .get(controllers.list.get)
 }
