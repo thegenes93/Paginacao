@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>List</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+
+<body class="container">
+	<div class="row">
+		<div class="container m-1 pt-1">
+			<div id="conteudo">
+				<div class="text-left">
+					<div class="d-flex justify-content-center pt-2 pb-0 textocor1">
+						<div class="text-center textocor1">
+							<h2><strong>Pessoas</strong></h2>
+						</div>
+					</div>
+					<div class="borda align-self-center">
+						<% if(erro.length > 0) { %>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="alert alert-danger p-1">
+									<ul class="m-0">
+										<li class="m-0"><%=erro%></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<% } %>
+					</div>
+					<div class="table-responsive">
+
+						<table class="table table-sm">
+
+							<thead class="thead-dark">
+								<tr>
+									<th>Cod</th>
+									<th>Nome</th>
+									<th>Email</th>
+									<th>Categoria</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for(let i =0; i< list.length;i++) { %>
+								<tr>
+									<td><%= list[i].id%></td>
+									<td><%= list[i].name%></td>
+									<td><%= list[i].email%></td>
+									<td><%= list[i].categoryId%></td>
+								</tr>
+								<% } %>
+							</tbody>
+						</table>
+
+					</div>
+					<nav >
+						<ul class="pagination">
+								<% for(let k=0; k< list.length; k++) { %>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<% } %>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+			<div class="pt-3">
+				<a href="cadastrar" class="btn btn-success"><strong>Cadastrar</strong></a>
+			</div>
+		</div>
+
+
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</html>
